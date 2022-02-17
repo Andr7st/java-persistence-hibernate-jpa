@@ -1,5 +1,5 @@
 /*
-* Este es el paquete referido en:
+* Package referred in:
 * META-INF/persistence.xml <class>org.andr7st.hibernate.app.entity</class>
 * */
 package org.andr7st.hibernate.app.entity;
@@ -60,6 +60,7 @@ public class Cliente {
     @Override
     public String toString() {
         return
+
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
