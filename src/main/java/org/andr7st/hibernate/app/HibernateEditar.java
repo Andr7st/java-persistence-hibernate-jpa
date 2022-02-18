@@ -16,7 +16,7 @@ public class HibernateEditar {
 
         try{
 
-            Long id = Long.valueOf(JOptionPane.showInputDialog("ingrese el ide del cliente a modificar:"));
+            Long id = Long.valueOf(JOptionPane.showInputDialog("ingrese el id del cliente a modificar:"));
             Cliente cliente = em.find(Cliente.class, id);
 
             String nombre = JOptionPane.showInputDialog("Modificar el nombre ?:", cliente.getNombre());
@@ -37,6 +37,7 @@ public class HibernateEditar {
 
         }catch (Exception e){
             em.getTransaction().rollback();
+            e.printStackTrace();
         }finally {
             em.close();
         }
