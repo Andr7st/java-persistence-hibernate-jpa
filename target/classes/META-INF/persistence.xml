@@ -4,7 +4,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>org.andr7st.hibernate.app.entity.Cliente</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
-
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/java_curso?serverTimezone=America/Bogota"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>

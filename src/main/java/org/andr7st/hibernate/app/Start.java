@@ -9,10 +9,15 @@ import java.util.List;
 
 public class Start { // HibernateList
     public static void main(String[] args) {
-      //  Start.HibernateListarWhere("paypal");
+        //Start.HibernateListarWhere("paypal");
+        //Start.HibernatePorIdFormaB(2L);
 
-        Start.HibernatePorIdFormaB(2L);
+       // Start.HibernateListarWhereF2("debito");
+
+        Start.HibernateListar();
     }
+
+    // Métodos de consulta: Listar
 
     public static void HibernateListar() {
 
@@ -34,6 +39,23 @@ public class Start { // HibernateList
         Cliente c = (Cliente) query.getSingleResult();
         System.out.print(ForeColor);
         System.out.println(c);
+        System.out.print(ClearColor);
+        em.close();
+
+    }
+
+    public static void HibernateListarWhereF2(String formaPago) { // forma2
+
+        EntityManager em = JpaUtil.getEntityManager();
+        Query query = em.createQuery("select c from Cliente c where c.formaPago=?1", Cliente.class);
+        query.setParameter(1, formaPago);
+       // query.setMaxResults(1);
+
+        List<Cliente> clientes = query.getResultList();
+
+        System.out.print(ForeColor);
+        System.out.println("Lista:");
+        System.out.println(clientes);
         System.out.print(ClearColor);
         em.close();
 
@@ -63,6 +85,7 @@ public class Start { // HibernateList
         em.close();
     }
 
+    // Console Colors
     public static final String ForeColor = "\u001B[35m \n";
     public static final String ClearColor = "\u001B[0m";
 }
